@@ -10,6 +10,9 @@ import { ConfirmDialogDeleteComponent } from './confirm-dialog-delete/confirm-di
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ContatoEditComponent } from './contato-edit/contato-edit.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,10 @@ import { ContatoEditComponent } from './contato-edit/contato-edit.component';
   ],
   imports: [
     CommonModule,
+    MatInputModule,
+    FormsModule,
+    MatCardModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatIconModule,
     MatCheckboxModule,

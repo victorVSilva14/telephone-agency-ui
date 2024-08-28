@@ -1,6 +1,13 @@
 <app-menu-superior></app-menu-superior>
 
 <div class="contato-list-container">
+    <div class="button-container">
+        <button mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+            Adicionar Contato
+        </button>
+    </div>
+    
     <mat-toolbar color="primary">
         <span>Lista de Contatos</span>
         <span class="spacer"></span>
@@ -52,7 +59,7 @@
 
         <ng-container matColumnDef="editar">
             <th mat-header-cell *matHeaderCellDef>Editar</th>
-            <td mat-cell (click)="openDialogEdit()" class="icon-cursor" *matCellDef="let contato">
+            <td mat-cell (click)="openDialogEdit(contato)" class="icon-cursor" *matCellDef="let contato">
                 <mat-icon color="primary">edit</mat-icon>
             </td>
         </ng-container>
