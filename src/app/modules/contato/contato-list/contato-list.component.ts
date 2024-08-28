@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contato } from 'src/app/models/contato.resource';
 import { ConfirmDialogDeleteComponent } from '../confirm-dialog-delete/confirm-dialog-delete.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ContatoEditComponent } from '../contato-edit/contato-edit.component';
 
 @Component({
   selector: 'app-contato-list',
@@ -70,6 +71,21 @@ export class ContatoListComponent implements OnInit {
         console.log('Item excluído');
       } else {
         console.log('Exclusão cancelada');
+      }
+    });
+  }
+
+  openDialogEdit(): void {
+    const dialogRef = this.dialog.open(ContatoEditComponent, {
+      width: '70vw', 
+      height: '60vh'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Item editado');
+      } else {
+        console.log('Edição cancelada');
       }
     });
   }
