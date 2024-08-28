@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contato } from 'src/app/models/contato.resource';
 import { ConfirmDialogDeleteComponent } from '../confirm-dialog-delete/confirm-dialog-delete.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ContatoEditComponent } from '../contato-edit/contato-edit.component';
+import { ContatoComponent } from '../contato-form/contato.component';
 
 @Component({
   selector: 'app-contato-list',
@@ -80,7 +80,7 @@ export class ContatoListComponent implements OnInit {
   }
 
   openDialogEdit(contato: Contato): void {
-    const dialogRef = this.dialog.open(ContatoEditComponent, {
+    const dialogRef = this.dialog.open(ContatoComponent, {
       width: '30vw', 
       height: '62vh',
       data: { contato }
@@ -91,6 +91,21 @@ export class ContatoListComponent implements OnInit {
         console.log('Item editado');
       } else {
         console.log('Edição cancelada');
+      }
+    });
+  }
+  
+  openDialogContato() {
+    const dialogRef = this.dialog.open(ContatoComponent, {
+      width: '30vw', 
+      height: '62vh'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Contato adicionado');
+      } else {
+        console.log('Cadastro cancelado');
       }
     });
   }

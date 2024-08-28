@@ -27,6 +27,12 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
+.checkbox-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
   
 mat-form-field {
     margin-bottom: 16px; 

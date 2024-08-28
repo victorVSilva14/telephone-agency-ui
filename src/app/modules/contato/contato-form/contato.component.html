@@ -1,0 +1,50 @@
+<div class="contato-container">
+    <mat-card class="contato-card">
+        <mat-card-title class="text-title-card">{{ isEditMode ? 'Editar contato' : 'Cadastrar contato' }}</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()" class="contato-form">
+                <div>
+                    <div class="checkbox-container">
+                        <mat-checkbox formControlName="snAtivo" class="checkbox">Ativo</mat-checkbox>
+                        <mat-checkbox  *ngIf="!isEditMode" formControlName="snFavorito" class="checkbox">Favorito</mat-checkbox>
+                    </div>
+                </div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome" placeholder="Digite seu nome" required>
+                    <mat-error *ngIf="contatoForm.get('nome')?.hasError('required')">
+                        Nome obrigatório
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email" placeholder="Digite seu email" required>
+                    <mat-error *ngIf="contatoForm.get('email')?.hasError('required')">
+                        Email obrigatório
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Celular</mat-label>
+                    <input matInput formControlName="celular" placeholder="Digite seu celular" required>
+                    <mat-error *ngIf="contatoForm.get('celular')?.hasError('required')">
+                        Celular obrigatório
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput formControlName="telefone" placeholder="Digite seu telefone" required>
+                    <mat-error *ngIf="contatoForm.get('telefone')?.hasError('required')">
+                        Telefone obrigatório
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit">Salvar</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+  
