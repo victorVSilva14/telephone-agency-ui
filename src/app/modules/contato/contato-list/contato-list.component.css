@@ -21,9 +21,26 @@ td.mat-cell {
 }
 
 .icon-success {
-    color: green; /* Ou use uma classe do Angular Material como 'mat-success' */
+    color: green; 
 }
   
 .icon-red {
-    color: red; /* Ou use uma classe do Angular Material como 'mat-accent' */
+    color: red;
 }  
+
+.icon-cursor {
+    cursor: pointer;
+}
+
+.favorite-icon {
+    color: orange;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.checkbox {
+    margin-left: 20px; 
+    font-size: 14px; 
+}
