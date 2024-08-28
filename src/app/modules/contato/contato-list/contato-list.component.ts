@@ -15,7 +15,7 @@ export class ContatoListComponent implements OnInit {
       email: 'joao.silva@example.com',
       celular: '123456789',
       telefone: '987654321',
-      snFavorito: true,
+      snFavorito: false,
       snAtivo: false,
       dhCad: new Date()
     },
