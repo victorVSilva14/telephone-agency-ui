@@ -54,7 +54,11 @@ export class ContatoListComponent implements OnInit {
     },
   ];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    // private contatoService: ContatoService,
+    // private toastyService: ToastyService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -88,5 +92,12 @@ export class ContatoListComponent implements OnInit {
         console.log('Edição cancelada');
       }
     });
+  }
+
+  favoritarContato(contato: Contato) {
+    contato.snFavorito = !contato.snFavorito;
+    // this.contatoService.update(contato).subscribe((res) => {
+    //   this.toastyService.success("Contato favoritado com sucesso");
+    // }).catch((err) => this.toastyService.error(err));
   }
 }
