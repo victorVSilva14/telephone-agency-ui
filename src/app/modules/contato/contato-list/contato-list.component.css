@@ -40,8 +40,47 @@ td.mat-cell {
     flex: 1 1 auto;
 }
 
-::ng-deep .mat-checkbox-frame {
-    border-color: white; 
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+}
+  
+.custom-checkbox input[type="checkbox"] {
+    display: none; 
+}
+  
+.custom-checkbox label {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 23px; 
+    margin-left: 15px;
+    font-size: 14px;
+}
+  
+.custom-checkbox label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 12px; 
+    height: 12px; 
+    border: 2px solid white; 
+    background-color: transparent; 
+    border-radius: 4px; 
+}
+  
+.custom-checkbox input[type="checkbox"]:checked + label::before {
+    background-color: white;
+    border-color: white;
+}
+  
+.custom-checkbox input[type="checkbox"]:checked + label::after {
+    content: '✔';
+    position: absolute;
+    left: 2px;
+    top: 0;
+    color: black;
 }
 
 .checkbox {

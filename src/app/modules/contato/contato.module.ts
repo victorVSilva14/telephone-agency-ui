@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ConfirmDialogDeleteComponent } from './confirm-dialog-delete/confirm-dialog-delete.component'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { ContatoEditComponent } from './contato-edit/contato-edit.component';
+import { ContatoComponent } from './contato-form/contato.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +18,7 @@ import { MatCardModule } from '@angular/material/card';
   declarations: [
     ContatoListComponent,
     ConfirmDialogDeleteComponent,
-    ContatoEditComponent
+    ContatoComponent
   ],
   imports: [
     CommonModule,
