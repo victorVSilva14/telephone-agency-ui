@@ -9,11 +9,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ConfirmDialogDeleteComponent } from './confirm-dialog-delete/confirm-dialog-delete.component'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { ContatoEditComponent } from './contato-edit/contato-edit.component';
 
 @NgModule({
   declarations: [
     ContatoListComponent,
-    ConfirmDialogDeleteComponent
+    ConfirmDialogDeleteComponent,
+    ContatoEditComponent
   ],
   imports: [
     CommonModule,

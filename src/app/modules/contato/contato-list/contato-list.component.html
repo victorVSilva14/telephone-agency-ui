@@ -52,7 +52,7 @@
 
         <ng-container matColumnDef="editar">
             <th mat-header-cell *matHeaderCellDef>Editar</th>
-            <td mat-cell class="icon-cursor" *matCellDef="let contato">
+            <td mat-cell (click)="openDialogEdit()" class="icon-cursor" *matCellDef="let contato">
                 <mat-icon color="primary">edit</mat-icon>
             </td>
         </ng-container>
