@@ -3,6 +3,7 @@ import { Contato } from 'src/app/models/contato.resource';
 import { ConfirmDialogDeleteComponent } from '../confirm-dialog-delete/confirm-dialog-delete.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ContatoComponent } from '../contato-form/contato.component';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-contato-list',
@@ -11,7 +12,7 @@ import { ContatoComponent } from '../contato-form/contato.component';
 })
 export class ContatoListComponent implements OnInit {
   displayedColumns: string[] = ['snFavorito', 'nome', 'email', 'celular', 'telefone', 'dhCad', 'snAtivo', 'editar', 'excluir'];
-  dataSource: Contato[] = [
+  listaContatos = new MatTableDataSource<Contato>([
     {
       id: 1,
       nome: 'João Silva',
@@ -52,7 +53,7 @@ export class ContatoListComponent implements OnInit {
       snAtivo: true,
       dhCad: new Date()
     },
-  ];
+  ]);
 
   constructor(
     private dialog: MatDialog,
@@ -63,20 +64,29 @@ export class ContatoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openConfirmDialog(): void {
+  openConfirmDialog(contato: Contato): void {
     const dialogRef = this.dialog.open(ConfirmDialogDeleteComponent, {
       width: '370px', 
       height: '180px', 
       maxWidth: '90vw', 
+      data: { contato }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Item excluído');
-      } else {
-        console.log('Exclusão cancelada');
+    dialogRef.afterClosed().subscribe(contatoExcluir => {
+      if (contatoExcluir) {
+        this.removeContato(contatoExcluir);
+        console.log('Contato excluido: ', contatoExcluir);
+        // this.toastyService.success("Contato excluido com sucesso");
       }
     });
+  }
+
+  removeContato(contato: Contato): void {
+    const index = this.listaContatos.data.findIndex(c => c.id === contato.id);
+    if (index >= 0) {
+      this.listaContatos.data.splice(index, 1);
+      this.listaContatos._updateChangeSubscription();
+    }
   }
 
   openDialogEdit(contato: Contato): void {

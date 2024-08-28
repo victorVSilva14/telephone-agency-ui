@@ -21,7 +21,7 @@
         </div>
     </mat-toolbar>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8  icon-center">
+    <table mat-table [dataSource]="listaContatos" class="mat-elevation-z8  icon-center">
         <ng-container matColumnDef="snFavorito">
             <th mat-header-cell *matHeaderCellDef>Favorito</th>
             <td mat-cell (click)="favoritarContato(contato)" *matCellDef="let contato">
@@ -72,7 +72,7 @@
 
         <ng-container matColumnDef="excluir">
             <th mat-header-cell *matHeaderCellDef>Excluir</th>
-            <td mat-cell class="icon-cursor" (click)="openConfirmDialog()" *matCellDef="let contato">
+            <td mat-cell class="icon-cursor" (click)="openConfirmDialog(contato)" *matCellDef="let contato">
                 <mat-icon class="icon-red">delete</mat-icon>
             </td>
         </ng-container>
