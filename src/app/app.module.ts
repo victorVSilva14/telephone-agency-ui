@@ -7,6 +7,7 @@ import { UtilModule } from './modules/util/util.module';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthService } from './services/auth.service';
 import { ContatoModule } from './modules/contato/contato.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ContatoModule } from './modules/contato/contato.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     LoginModule,
     UtilModule, 
     ContatoModule,
