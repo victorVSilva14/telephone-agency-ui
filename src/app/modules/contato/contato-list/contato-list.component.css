@@ -9,9 +9,21 @@ table {
 th.mat-header-cell {
     background-color: #f0f0f0;
     font-weight: bold;
+    text-align: center;
+}
+
+td.mat-cell {
+    text-align: center;
 }
 
 .mat-icon {
     vertical-align: middle;
 }
+
+.icon-success {
+    color: green; /* Ou use uma classe do Angular Material como 'mat-success' */
+}
   
+.icon-red {
+    color: red; /* Ou use uma classe do Angular Material como 'mat-accent' */
+}  
