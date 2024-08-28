@@ -1,0 +1,15 @@
+mat-dialog-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-icon {
+    margin-right: 8px;
+    text-align: center;
+    color: #f44336;
+  }
+  
+  p {
+    margin: 0;
+  }
+  

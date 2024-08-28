@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contato } from 'src/app/models/contato.resource';
+import { ConfirmDialogDeleteComponent } from '../confirm-dialog-delete/confirm-dialog-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contato-list',
@@ -51,8 +53,24 @@ export class ContatoListComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openConfirmDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogDeleteComponent, {
+      width: '370px', 
+      height: '180px', 
+      maxWidth: '90vw', 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Item excluído');
+      } else {
+        console.log('Exclusão cancelada');
+      }
+    });
   }
 }

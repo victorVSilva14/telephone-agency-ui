@@ -59,7 +59,7 @@
 
         <ng-container matColumnDef="excluir">
             <th mat-header-cell *matHeaderCellDef>Excluir</th>
-            <td mat-cell class="icon-cursor" *matCellDef="let contato">
+            <td mat-cell class="icon-cursor" (click)="openConfirmDialog()" *matCellDef="let contato">
                 <mat-icon class="icon-red">delete</mat-icon>
             </td>
         </ng-container>
