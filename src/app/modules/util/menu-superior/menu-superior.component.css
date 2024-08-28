@@ -1,8 +1,9 @@
 .container {
-  margin: 0;
-  top: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.spacer {
-  flex: 1 1 auto;
+.toolbar-title {
+  text-align: center;
+  flex: 1;
 }

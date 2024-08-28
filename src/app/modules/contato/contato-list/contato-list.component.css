@@ -1,0 +1,17 @@
+.contato-list-container {
+    padding: 16px;
+}
+
+table {
+    width: 100%;
+}
+
+th.mat-header-cell {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+  
