@@ -7,10 +7,18 @@ import { delay } from 'rxjs/operators';
 })
 export class AuthService {
 
+  private isLoggedIn = false;
+
   constructor() { }
 
   authenticate(username: string, password: string): Observable<boolean> {
     const isAuthenticated = username === 'admin' && password === 'admin';
+    this.isLoggedIn = isAuthenticated;
     return of(isAuthenticated).pipe(delay(1000)); 
   }
+
+  isAuthenticated(): boolean {
+    return this.isLoggedIn;
+  }
+
 }

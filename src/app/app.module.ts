@@ -6,6 +6,7 @@ import { LoginModule } from './modules/login/login.module';
 import { UtilModule } from './modules/util/util.module';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthService } from './services/auth.service';
+import { ContatoModule } from './modules/contato/contato.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AuthService } from './services/auth.service';
     BrowserModule,
     LoginModule,
     UtilModule, 
+    ContatoModule,
     AppRoutingModule
   ],
   providers: [AuthService],

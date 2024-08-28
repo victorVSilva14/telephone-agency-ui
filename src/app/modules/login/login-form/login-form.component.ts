@@ -36,8 +36,7 @@ export class LoginFormComponent implements OnInit {
         this.isSubmitting = false;
 
         if (isAuthenticated) {
-          // this.router.navigate(['/contato']);
-          console.log('teste')
+          this.router.navigate(['/contatos']);
         } else {
           this.errorMessage = 'Usuário ou senha incorretos.';
         }
