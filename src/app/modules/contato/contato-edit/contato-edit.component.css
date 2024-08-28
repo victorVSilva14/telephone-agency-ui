@@ -1,0 +1,38 @@
+.contato-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%;  */
+    width: 100%; 
+    overflow: hidden;
+}
+    
+.contato-card {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+  
+.contato-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    font-size: 14px; 
+    margin-bottom: 10px;
+}
+
+.text-title-card {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+mat-form-field {
+    margin-bottom: 16px; 
+}
+  
+button {
+    margin-top: 16px;
+}
+  

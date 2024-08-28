@@ -40,7 +40,22 @@ td.mat-cell {
     flex: 1 1 auto;
 }
 
+::ng-deep .mat-checkbox-frame {
+    border-color: white; 
+}
+
 .checkbox {
     margin-left: 20px; 
     font-size: 14px; 
 }
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; 
+    margin-bottom: 10px;
+  }
+  
+  button mat-icon {
+    margin-right: 8px; 
+  }
+  

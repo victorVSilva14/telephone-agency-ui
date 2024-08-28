@@ -79,10 +79,11 @@ export class ContatoListComponent implements OnInit {
     });
   }
 
-  openDialogEdit(): void {
+  openDialogEdit(contato: Contato): void {
     const dialogRef = this.dialog.open(ContatoEditComponent, {
-      width: '70vw', 
-      height: '60vh'
+      width: '30vw', 
+      height: '62vh',
+      data: { contato }
     });
 
     dialogRef.afterClosed().subscribe(result => {
