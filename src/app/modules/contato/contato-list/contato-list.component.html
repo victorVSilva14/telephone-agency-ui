@@ -11,8 +11,14 @@
     <mat-toolbar color="primary">
         <span>Lista de Contatos</span>
         <span class="spacer"></span>
-        <mat-checkbox class="checkbox">Favoritos</mat-checkbox>
-        <mat-checkbox class="checkbox">Mostrar inativos</mat-checkbox>
+        <div class="custom-checkbox">
+            <input type="checkbox" id="customCheckboxFavorite">
+            <label for="customCheckboxFavorite">Favoritos</label>
+        </div>
+        <div class="custom-checkbox">
+            <input type="checkbox" id="customCheckboxInative">
+            <label for="customCheckboxInative">Mostrar inativos</label>
+        </div>
     </mat-toolbar>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8  icon-center">
